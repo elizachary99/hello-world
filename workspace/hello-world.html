@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+  <style type="text/css">
+    
+  </style>
+
+  <title></title>
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+var rawXML = '<?xml version="1.0" encoding="utf-8"?><document><row><Col0>1243</Col0 > <Col1>3355</Col1 > <Col2>2342</Col2 > </row> <row> <Col0>4455</Col0 > <Col1>7898</Col1 > <Col2>5232</Col2 > </row> <row> <Col0>6541</Col0 > <Col1>3214</Col1 > <Col2>9874</Col2 > </row> <row> <Col0>7894</Col0 > <Col1>4561</Col1 > <Col2>3212</Col2 > </row></document>';
+var xmlParsed = $.parseXML(rawXML);
+var xmlDoc = $(xmlParsed).find('document');
+var xmlRow = xmlDoc.find('row');
+
+$(xmlRow).each(function() {
+    for(var i=0; i < 3; i++) {
+      $('#xmlstuff').append($(this).find('Col' + i).text()).append('<br/>');   
+    }
+});
+});//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+  <div id="xmlstuff"></div>
+</body>
+
+</html>
+
